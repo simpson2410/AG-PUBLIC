@@ -1,0 +1,16 @@
+.center {
+    margin: 0;
+    position: absolute;
+    top: 170%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .center1 {
+    margin: 0;
+    position: absolute;
+    top: 280%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }

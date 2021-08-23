@@ -1,0 +1,24 @@
+<app-board-admin></app-board-admin>
+<br>
+<br>
+<h1 style="text-align: center;font-weight: bolder;color: coral;">THÊM THÔNG TIN LOẠI SẢN PHẨM</h1>
+    
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>ID</label>
+          <input class="form-control" type="text" formControlName="_id" required>
+        </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" formControlName="name" required>
+        </div>
+  
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Add Type</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

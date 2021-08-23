@@ -1,0 +1,60 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="" class="navbar-brand">HOME</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="#" class="nav-link" [routerLink]="['#']">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/mod" class="nav-link" [routerLink]="['/mod']">Moderator Board</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  *ngIf="showAdminBoard" role="button" aria-haspopup="true" aria-expanded="false">Quản lý người dùng</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/add-user']">Thêm người dùng</a>
+          <a class="dropdown-item" [routerLink]="['/users-list']">Danh sách người dùng</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  *ngIf="showAdminBoard" role="button" aria-haspopup="true" aria-expanded="false">Quản lý sản phẩm</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/add-product']">Thêm sản phẩm</a>
+          <a class="dropdown-item" [routerLink]="['/products-list']">Danh sách sản phẩm</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  *ngIf="showAdminBoard" role="button" aria-haspopup="true" aria-expanded="false">Quản lý danh mục</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/add-ptype']">Thêm Danh Mục</a>
+          <a class="dropdown-item" [routerLink]="['/ptypes-list']">Danh sách danh mục</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  *ngIf="showAdminBoard" role="button" aria-haspopup="true" aria-expanded="false">Quản lý Thương hiệu</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/add-brand']">Thêm thương hiệu</a>
+          <a class="dropdown-item" [routerLink]="['/brands-list']">Danh sách thương hiệu</a>
+        </div>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" [routerLink]="['/register']">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a style="color: tomato; font-size: large;font-weight: bold; " href="/mguser" class="nav-link" [routerLink]="['/mguser']"><a style="color: white;" >Xin Chào: </a> {{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+</div>

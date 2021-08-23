@@ -1,0 +1,32 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<app-header></app-header>
+    
+<section class="banner mb-5">
+            <div class="branch">VSMART</div>
+            <h1 class="slogan">
+            THÀNH PHỐ <br> THÔNG MINH
+            </h1>
+            <br>
+            <p class="box">
+                Mô hình thành phố ứng dụng công nghệ thông tin, 
+                trí tuệ nhân tạo vào trong quản lý, 
+                nâng cao tiêu chuẩn cuộc sống đô thị, 
+                cải thiện và sử dụng hiệu quả các nguồn năng lượng, 
+                tài nguyên thiên nhiên.
+            </p>
+        </section>
+        <br>
+        <h1>test</h1>
+
+        
+        <div *ngFor="let product of products ">
+          <div>Title: <span>{{product.name}}</span></div>
+          <div>Author: <span></span></div>
+          <div>Category: <span>{{product.brand}}</span></div>
+        </div>
+        
+<app-footer></app-footer>

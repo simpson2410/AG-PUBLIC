@@ -1,0 +1,90 @@
+<nav class="navbar-white sticky-top navbar1">
+    <div class="container" style="padding-top: 10px;">
+
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="logo">
+                        <a href="">
+                            <img src="/assets/IMG/vsm_logo.svg" alt="vinsmart">
+                        </a>
+                </div>
+            </div>
+            <div class="col-sm-9 navmenu">
+                <nav class="navbar navbar-expand-sm navbar-white shift">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link nava" [routerLink]="['']">Trang chủ</a>
+                      </li>
+                      <li class="nav-item dropdown" >
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
+                        <div class="dropdown-menu">
+                          <ng-container *ngFor="let ptype of ptypes; let i = index">
+                            <li class="nav-item wnav">
+                              <a class="nav-link"   [routerLink]="['/device/',ptype._id]">{{ptype.name}}</a>
+                            </li>
+                          </ng-container>
+                        </div>
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/phome']">SmartHome</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/pcity']">SmartCity</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/news']">Tin tức</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/contact']">Liên hệ</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+            <div class="cart" >
+              <button [routerLink]="['/cart']" class="btn btn-light">
+                <i style="font-size: 20px;"  class="fas fa-cart-plus"></i>
+                <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+            </button>
+            </div>
+            <div class="col-sm-12 loginswitch">
+                <div class="login"  *ngIf="!isLoggedIn">
+                    <div class="middle">
+                      <div class="sm-container">
+                        <i class="show-btn fas fa-user"></i>
+                        <div class="sm-menu">
+                          <a href="/login" class="after">Login</a>
+                          <br>
+                          <a href="/register"class="after1">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="login1"  *ngIf="isLoggedIn">
+                    <div class="middle">
+                      <div class="sm-container sx">
+                        <a href="/profile" class="nav-link" [routerLink]="['/profile']">{{ username }}</a>
+                    </div>
+                  </div>
+              </div>
+                <div class="SW-L">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                VN
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#"><img src="https://image.flaticon.com/icons/png/128/3054/3054103.png" alt="">.&ensp; Việt Nam</a>
+                                <a class="dropdown-item" href="#"><img src="https://previews.123rf.com/images/kannaa123rf/kannaa123rf1605/kannaa123rf160500380/57591779-american-united-states-flag-in-glossy-square-button-of-icon-usa-emblem-isolated-on-white-background-.jpg" alt="">.&ensp; English</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+    </div>
+    </div>
+    </nav>
+
+    <div class="cleanline">
+    </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>

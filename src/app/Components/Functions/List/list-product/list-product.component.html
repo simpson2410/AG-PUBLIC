@@ -1,0 +1,40 @@
+<app-board-admin></app-board-admin>
+<div class="container">
+  <br>
+  <br>
+      <h1 style="text-align: center; color: coral;font-size: 40px; font-weight: bolder;">Danh Sách Sản Phẩm</h1>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tên Sản Phẩm</th>
+            <th scope="col">Giá Bán</th>
+            <th scope="col">Mô Tả</th>
+            <th scope="col">Hình ảnh</th>
+            <th scope="col">Số Lượng</th>
+            <th scope="col">Loại Sản Phẩm</th>
+            <th scope="col">Thương Hiệu</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; let i = index">
+            <th scope="row">{{product._id}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+           <td>{{product.urlImage}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.ptype}}</td>
+            <td>{{product.brand}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary" routerLink="/edit-product/{{product._id}}">Edit</button> || 
+              <button class="btn btn-sm btn-danger" (click)="delete(product._id, i)">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

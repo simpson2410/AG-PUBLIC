@@ -1,0 +1,318 @@
+.header {
+    padding: 5px;
+    background: white;
+    color: black;
+    font-size: 15px;
+  }
+.body {
+    position: relative;
+    left: 0;
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s;
+    transition: left 0.3s;
+}
+.wnav
+{
+  width: 200px;
+}
+.middle {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sm-container {
+  text-align: center;
+}
+.loginswitch
+{
+  position: absolute;
+  left: 10px;
+}
+.navmenu
+{
+padding-left: 100px;
+}
+.sm-container:hover .sm-menu {
+  max-height: 350px;
+}
+.sm-container1 {
+  text-align: center;
+}
+
+.sx
+{
+  position: absolute;
+  left: -100px;
+  top: 10px;
+}
+.sm-container1:hover .sm-menu {
+  max-height: 350px;
+}
+
+.sm-container i {
+  color: #333;
+  padding: 14px 20px 20px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+.sm-container1 i {
+  color: lightcoral;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+.after
+{
+  color: #eee;
+  line-height: normal;
+  font-weight: bold;
+  margin-top: 200px;
+}
+.after1
+{
+  color: #eee;
+  line-height: normal;
+  font-weight: bold;
+}
+
+.sm-container i:hover {
+  color: red;
+}
+.sm-container1 i:hover {
+  color: red;
+}
+.sm-menu {
+  background: #DA5545;
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  width:160px;
+  max-height: 0;
+  transition: all 0.7s;
+}
+
+
+.logo
+{
+    padding-left: 20px;
+}
+.logo img
+{
+max-width: 100%;
+}
+.navbar-nav a
+{
+    color: #303F49;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 10;
+}
+.login
+{
+    position: absolute;
+    right: 140px;
+    padding-top: 45px;
+}
+.login1
+{
+    position: absolute;
+    right: 140px;
+    padding-top: 10px;
+}
+.login1 a
+{
+  color: #DA5545;
+}
+.cart
+{
+  position: absolute;
+  left: 1200px;
+  top: 20px;
+}
+.SW-L
+{
+    position: absolute;
+    right: 80px;
+    padding-top: 10px;
+}
+.dropdown-menu  img
+{
+    position: absolute;
+    left: 10px;
+    padding-top: 5px;
+    width: 15px;
+}
+nav ul li a,
+  nav ul li a:after,
+  nav ul li a:before {
+    transition: all .5s;
+  }
+  nav ul li a:hover {
+    color: #555;
+  }
+  
+  
+  /* stroke */
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after,
+  nav.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
+  
+  nav.fill ul li a {
+    transition: all 2s;
+  }
+  
+  nav.fill ul li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+  }
+  nav.fill ul li a:hover {
+    color: #fff;
+    z-index: 1;
+  }
+  nav.fill ul li a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+  }
+  
+  /* Circle */
+  nav.circle ul li a {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  nav.circle ul li a:after {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '.';
+    color: transparent;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: transparent;
+  }
+  nav.circle ul li a:hover:after {
+    -webkit-animation: circle 1.5s ease-in forwards;
+  }
+  
+  /* SHIFT */
+  nav.shift ul li a {
+    position:relative;
+    z-index: 1;
+  }
+  nav.shift ul li a:hover {
+    color: black;
+  }
+  nav.shift ul li a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: #DA5545;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  nav.shift ul li a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+  }
+  
+  
+  
+  /* Keyframes */
+  @-webkit-keyframes fill {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      background: #333;
+    }
+  }
+  
+  /* Keyframes */
+  @-webkit-keyframes circle {
+    0% {
+      width: 1px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 1px;
+      z-index: -1;
+      background: #eee;
+      border-radius: 100%;
+    }
+    100% {
+      background: #aaa;
+      height: 5000%;
+      width: 5000%;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 0;
+    }
+  }
+  .navbar1
+  {
+    width: 100%;
+    background-color: white;
+    position: fixed; /* Set the navbar to fixed position */
+  }
+  .cleanline
+  {
+    margin-top:100px;
+  }
+  @media screen and (max-width:600px) {
+
+  }

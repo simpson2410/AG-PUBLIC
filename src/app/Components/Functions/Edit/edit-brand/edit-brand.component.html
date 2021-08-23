@@ -1,0 +1,19 @@
+<app-board-admin></app-board-admin>
+<br>
+<br>
+<h1 style="text-align: center;font-weight: bolder;color: coral;">CẬP NHẬT THÔNG TIN THƯƠNG HIỆU</h1>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" formControlName="name" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

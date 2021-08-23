@@ -1,0 +1,239 @@
+.banner
+{
+    text-align: center;
+    background-image: url(/assets/IMG/background-4.png);
+    width: 100%;
+    height: 608px;
+}
+
+.banner-z
+{
+    width: 874px;
+    height: 409px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 320px;
+    margin-left: 220px;
+    background-image: url(/assets/IMG/soc.png);
+    position: absolute;
+}
+.vdeo
+{
+    margin-left: 306px; 
+    width: 549px; 
+    height: 341px; 
+    padding-top: 32px;
+}
+.title
+{
+    padding-top: 90px;
+    padding-left: 190px;
+    color: aliceblue;
+    font-size: 45px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 65px;
+    letter-spacing: 5px;
+}
+.title strong
+{
+    font-size: 65px;
+}
+body {
+    background-color: #252830;
+    color: white;
+    font-family: "Lato";
+  }
+  .container-fluid {
+    width: 100%;
+  }
+  .media {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: 90%;
+
+  }
+  figure {
+    height: 370px;
+    overflow: hidden;
+    position: relative;
+  }
+  figure a {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+  figure:hover .media {
+    transform: scale(1.25);
+  }
+  figcaption {
+    color: #252830;
+    height: calc(100% - 30px);
+    margin: 15px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 250px;
+  }
+  .container_swap{
+
+    width: 100%;
+    
+    }
+    
+    .div_left{
+    
+    
+    float: left;
+    
+    
+    }
+    
+    .div_right{
+    
+    
+    float: left;
+    
+    
+    }
+  .body {
+    background-color: white;
+    bottom: 0;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+  }
+  svg {
+    height: inherit;
+    width: 100%;
+  }
+  svg text {
+    text-anchor: middle;
+  }
+  svg #alpha {
+    fill: white;
+  }
+  svg .title {
+    font-size: 28px;
+    font-family: "Montserrat";
+    letter-spacing: 5px;
+  }
+  svg #base {
+    fill: white;
+    -webkit-mask: url(#mask);
+    mask: url(#mask);
+  }
+  .footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+  }
+  .carousel{
+    background: #2f4357;
+}
+.carousel-item{
+    text-align: center;
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel-item img 
+{
+    width: 100%;
+    height: 370px;
+}
+.cardall{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.clear
+{
+  padding-top: 200px;
+}
+.noi-dung{
+  padding: 20px 10px;
+}
+.noi-dung h3{
+ font-size: 24px;
+ margin: 10px 0 15px 0;
+ color:rgb(240, 79, 50);
+}
+.noi-dung p{
+  color: #a0a0a0;
+  font-size: 16px;
+  line-height: 30px;
+}
+input {
+  display: block;
+  margin-top: 20px;
+  float: right;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 20px 0 #0000003b;
+
+  
+}
+
+input:hover{
+cursor: pointer;
+
+}
+.btn1{
+  background-image: linear-gradient(135deg, #48c6ef , #6f86d6);
+}
+.btn2{
+  background-image: linear-gradient(135deg, #2bdce3, #42ffdb);
+}
+.btn3{
+  background-image: linear-gradient(135deg, #ff758c , #ff7eb3);
+}
+.container::after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  opacity: 0.6;
+}
+
+body{
+  background-color: #151320;
+  height: 100vh;
+  font-family: Roboto;
+  display: grid;
+  place-items: center center;
+  color: #fff;
+}
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 20px;
+  grid-gap: 40px;
+}
+.card{
+  background-color: #1c1b29;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.container{
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.cards .card .container img{
+  width: 100%;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+  

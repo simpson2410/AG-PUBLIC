@@ -1,0 +1,29 @@
+<app-board-admin></app-board-admin>
+<div class="container">
+  <br>
+  <br>
+      <h1 style="text-align: center; color: coral;font-size: 40px; font-weight: bolder;">Thương Hiệu</h1>
+  
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let brand of brands; let i = index">
+            <th scope="row">{{brand._id}}</th>
+            <td>{{brand.name}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary" routerLink="/edit-brand/{{brand._id}}">Edit</button> || 
+              <button class="btn btn-sm btn-danger" (click)="delete(brand._id, i)">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
