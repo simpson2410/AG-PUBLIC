@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PtypeService } from 'src/app/_services/ptype.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 
 @Component({
@@ -10,14 +11,29 @@ import { PtypeService } from 'src/app/_services/ptype.service';
 export class ListPtypeComponent implements OnInit {
 
   ptypes:any = [];
-
-  constructor(private ptypeService: PtypeService) { }
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showForm = false;
+  username?: string;
+  constructor(private ptypeService: PtypeService,
+    private tokenStorageService: TokenStorageService
+    ) { }
 
   ngOnInit(): void {
     this.ptypeService.Getptypes().subscribe(res => {
       console.log(res)
       this.ptypes =res;
     });    
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn){
+      const user = this.tokenStorageService.getUser();
+
+      this.roles = user.roles;
+
+      this.showForm = this.roles.includes('ROLE_ADMIN');
+      this.showForm = this.roles.includes("ROLE_MODERATOR");
+
+    }
   }
 
   delete(id:any, i:any) {

@@ -114,13 +114,13 @@ max-width: 100%;
 .login
 {
     position: absolute;
-    right: 140px;
+    right: 170px;
     padding-top: 45px;
 }
 .login1
 {
     position: absolute;
-    right: 140px;
+    right: 150px;
     padding-top: 10px;
 }
 .login1 a
@@ -130,13 +130,13 @@ max-width: 100%;
 .cart
 {
   position: absolute;
-  left: 1200px;
+  left: 1350px;
   top: 20px;
 }
 .SW-L
 {
     position: absolute;
-    right: 80px;
+    right: 90px;
     padding-top: 10px;
 }
 .dropdown-menu  img

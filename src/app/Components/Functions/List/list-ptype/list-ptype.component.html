@@ -1,4 +1,9 @@
 <app-board-admin></app-board-admin>
+<div *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>
+<div *ngIf="isLoggedIn">
+  <div *ngIf="showForm">
 <div class="container">
   <br>
   <br>
@@ -26,3 +31,5 @@
       </table>
     </div>
   </div>
+</div>
+</div>

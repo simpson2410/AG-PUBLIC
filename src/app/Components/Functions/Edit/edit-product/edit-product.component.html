@@ -1,6 +1,11 @@
 <app-board-admin></app-board-admin>
 <br>
 <br>
+<div *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>
+<div *ngIf="isLoggedIn">
+  <div *ngIf="showForm">
 <h1 style="text-align: center;font-weight: bolder;color: coral;">CẬP NHẬT THÔNG TIN SẢN PHẨM</h1>
 <div class="container">
       <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
@@ -53,5 +58,7 @@
         </div>
       </form>
     </div>
+</div>
+</div>
 
   

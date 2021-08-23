@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { PtypeService } from 'src/app/_services/ptype.service';
 import { CartService } from 'src/app/_services/cart.service';
+import { CrudService } from 'src/app/_services/crud.service';
 
 @Component({
   selector: 'app-header',
@@ -16,11 +17,14 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
+  public productList : any ;
+  public filterCategory : any
   username?: string;
 
   constructor(private tokenStorageService: TokenStorageService,
               private ptypeService: PtypeService,
-              private cartService: CartService) {}
+              private cartService: CartService,
+              private crudService: CrudService) {}
 
   ngOnInit(): void {
     this.ptypeService.Getptypes().subscribe(res => {
@@ -44,6 +48,7 @@ export class HeaderComponent implements OnInit {
 
       this.username = user.username;
     }
+
   }
 
   logout(): void{
@@ -54,4 +59,5 @@ export class HeaderComponent implements OnInit {
     this.tokenStorageService.signOut();
     window.location.reload();
 }
+
 }

@@ -1,6 +1,10 @@
 
 <app-board-admin></app-board-admin>
-<div class="container">
+<div class="container"*ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>
+<div class="container" *ngIf="isLoggedIn">
+  <div *ngIf="showForm">
   <br>
   <br>
   <h1 style="text-align: center;font-weight: bolder;color: coral;">THÊM THÔNG TIN SẢN PHẨM</h1>
@@ -56,3 +60,4 @@
       </div>
       </form>
     </div>
+</div>

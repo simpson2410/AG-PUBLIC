@@ -1,10 +1,13 @@
 <app-board-admin></app-board-admin>
+<div *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>
+<div *ngIf="isLoggedIn">
+  <div *ngIf="showForm">
 <div class="container">
   <br>
   <br>
       <h1 style="text-align: center; color: coral;font-size: 40px; font-weight: bolder;">Thương Hiệu</h1>
-  
-  
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
@@ -26,4 +29,5 @@
       </table>
     </div>
   </div>
-  
+</div>
+</div>

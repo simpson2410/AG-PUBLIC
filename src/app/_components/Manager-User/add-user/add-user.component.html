@@ -1,6 +1,11 @@
 <app-board-admin></app-board-admin>
 <br>
 <br>
+<div *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>
+<div *ngIf="isLoggedIn">
+  <div *ngIf="showForm">
 <h1 style="text-align: center;font-weight: bolder;color: coral;">THÊM THÔNG TIN NGƯỜI DÙNG</h1>
     
 <div class="row justify-content-center mt-5">
@@ -93,4 +98,5 @@
 </div>
     </div>
   </div>
-  
+</div>
+</div>

@@ -6,6 +6,9 @@ import { brand } from 'src/app/_services/brand';
 import { BrandService } from 'src/app/_services/brand.service';
 import { PtypeService } from 'src/app/_services/ptype.service';
 import { ptype } from 'src/app/_services/ptype';
+import { AuthService } from 'src/app/_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
+
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
@@ -18,7 +21,10 @@ export class EditProductComponent implements OnInit {
   brands:any = [];
   ptypes:any = [];
   updateForm: FormGroup;
-  
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showForm = false;
+  username?: string;
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -27,6 +33,7 @@ export class EditProductComponent implements OnInit {
     private crudService: CrudService,
     private brandService: BrandService,
     private ptypeService: PtypeService,
+    private tokenStorageService: TokenStorageService
   ) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
@@ -54,6 +61,16 @@ export class EditProductComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn){
+      const user = this.tokenStorageService.getUser();
+
+      this.roles = user.roles;
+
+      this.showForm = this.roles.includes('ROLE_ADMIN');
+      this.showForm = this.roles.includes("ROLE_MODERATOR");
+
+    }
     this.brandService.Getbrands().subscribe(res => {
       console.log(res)
       this.brands =res;

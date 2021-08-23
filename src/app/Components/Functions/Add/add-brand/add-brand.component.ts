@@ -15,8 +15,7 @@ export class AddBrandComponent implements OnInit {
   bookForm: FormGroup;
   private roles: string[] = [];
   isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
+  showForm = false;
   username?: string;
   constructor(
     public formBuilder: FormBuilder,
@@ -39,9 +38,10 @@ export class AddBrandComponent implements OnInit {
 
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes("ROLE_MODERATOR");
+      this.showForm = this.roles.includes('ROLE_ADMIN');
+      this.showForm = this.roles.includes("ROLE_MODERATOR");
 
+      this.username = user.username;
     }
   }
   onSubmit(): any {

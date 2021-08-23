@@ -2,6 +2,8 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BrandService } from 'src/app/_services/brand.service';
 import { FormGroup, FormBuilder } from "@angular/forms";
+import { AuthService } from 'src/app/_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-edit-brand',
@@ -12,13 +14,18 @@ export class EditBrandComponent implements OnInit {
 
   getId: any;
   updateForm: FormGroup;
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showForm = false;
+  username?: string;
   
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
     private activatedRoute: ActivatedRoute,
-    private brandService: BrandService
+    private brandService: BrandService,
+    private tokenStorageService: TokenStorageService
   ) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
@@ -34,6 +41,16 @@ export class EditBrandComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn){
+      const user = this.tokenStorageService.getUser();
+
+      this.roles = user.roles;
+
+      this.showForm = this.roles.includes('ROLE_ADMIN');
+      this.showForm = this.roles.includes("ROLE_MODERATOR");
+
+    }
   }
   onUpdate(): any {
     this.brandService.updatebrand(this.getId, this.updateForm.value)

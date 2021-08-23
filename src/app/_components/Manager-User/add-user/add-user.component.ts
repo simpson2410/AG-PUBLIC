@@ -8,7 +8,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AuthService } from 'src/app/_services/auth.service';
 import { RolesService } from 'src/app/_services/roles.service';
 import { roles } from 'src/app/_services/roles';
-
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -17,7 +17,10 @@ import { roles } from 'src/app/_services/roles';
 export class AddUserComponent implements OnInit {
   rolesid: number;
   roless:any = [];
-
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showForm = false;
+  username?: string;
   form: any = {
     username: null,
     email: null,
@@ -30,13 +33,27 @@ export class AddUserComponent implements OnInit {
   errorMessage = '';
 
   constructor(private authService: AuthService,
-              private rolesService: RolesService,) { }
+              private rolesService: RolesService,
+              private tokenStorageService: TokenStorageService
+              ) { }
 
   ngOnInit(): void {
     this.rolesService.Getroless().subscribe(res => {
       console.log(res)
       this.roless =res;
     });   
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn){
+      const user = this.tokenStorageService.getUser();
+
+      this.roles = user.roles;
+
+      this.showForm = this.roles.includes('ROLE_ADMIN');
+      this.showForm = this.roles.includes("ROLE_MODERATOR");
+
+      this.username = user.username;
+    }
   }
 
   onSubmit(): void{
