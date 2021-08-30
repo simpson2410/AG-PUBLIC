@@ -9,6 +9,8 @@ import { Routes,RouterModule } from '@angular/router';
 import { CartService } from 'src/app/_services/cart.service';
 import { CountdownConfig } from 'ngx-countdown';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 const CountdownTimeUnits: Array<[string, number]> = [
   ['Y', 1000 * 60 * 60 * 24 * 365], // years
@@ -28,6 +30,11 @@ export class DeviceComponent implements OnInit {
   products:any = [];
   brands:any;
   cattid:any;
+
+  public username?: string;
+  isLoggedIn = false;
+  private roles: string[] = [];
+
   constructor(
     private crudService: CrudService,
     private brandService: BrandService,
@@ -35,7 +42,8 @@ export class DeviceComponent implements OnInit {
     private ptypeService: PtypeService,
     private route:ActivatedRoute,
     private cartService:CartService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private tokenStorageService: TokenStorageService,
     ) { }
 
   ngOnInit(): void {
@@ -43,7 +51,15 @@ export class DeviceComponent implements OnInit {
   //  this.activatedRoute.paramMap.subscribe(params => {
   //   this.cattid = params.get('id');
   //   console.log(this.cattid);
+  this.isLoggedIn = !!this.tokenStorageService.getToken();
 
+  if (this.isLoggedIn){
+    const user = this.tokenStorageService.getUser();
+
+    this.username = user.username;
+    console.log('huiufd', user.username)
+
+  }
   // });
   this.getRoutePro(this.route.snapshot.params['_id'])
   // this.GetProductCatId();
@@ -63,17 +79,22 @@ export class DeviceComponent implements OnInit {
   getRoutePro(_id : any){
     this.crudService.GetLoaiSP(_id).subscribe((data:any)=> {
          this.products=data;
+         console.log("id",data)
     });
   }
   
-  addItemToCart( id,price, quantity): void {
+  addItemToCart( id,price, quantity,username): void {
     let payload = {
       productId: id,
       price,
       quantity,
+      username
+      
     };
     console.log('sfdsgh',payload);
-  // this.cartService.addcart();
+    this.cartService.addcart(payload).subscribe(() => {
+      alert(' Added');
+    });
   }
   config: CountdownConfig = {
     leftTime: 60 * 60 * 25,

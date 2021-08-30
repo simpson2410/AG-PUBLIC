@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   showModeratorBoard = false;
   public productList : any ;
   public filterCategory : any
-  username?: string;
+  public username?: string;
 
   constructor(private tokenStorageService: TokenStorageService,
               private ptypeService: PtypeService,
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
       this.showModeratorBoard = this.roles.includes("ROLE_MODERATOR");
 
       this.username = user.username;
-      console.log('huiufd', user._id)
+      console.log('huiufd', user.username)
 
     }
 
