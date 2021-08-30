@@ -7,7 +7,7 @@
   
   <br>
   <br>
-  <h1 style="text-align: center;font-weight: bolder;color: coral;">THÊM THÔNG TIN SẢN PHẨM</h1>
+  <h1 style="text-align: center;font-weight: bolder;color: coral;">THÊM test gh</h1>
       <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
         
           <div class="row">
@@ -21,12 +21,6 @@
           <label>Giá Bán</label>
           <input class="form-control" type="text" formControlName="price" required>
         </div>
-  
-        <div class="form-group">
-          <label>Mô Tả</label>
-          <textarea class="form-control" rows="4" type="text" formControlName="description" required>
-        </textarea>
-          </div>
             </div>
             <div class="col-6">
         <div class="form-group">
@@ -38,24 +32,16 @@
           <label>Số Lượng</label>
           <input class="form-control" type="text" formControlName="quantity" required>
         </div>
-        
         <div class="form-group">
-          <label>Thương Hiệu</label>
-         <select [(ngModel)]="brandid" class="form-control" formControlName="brand" required>
-          <option value="">---Please select---</option>
-           <option *ngFor="let brand of brands" [value]="brand._id">{{brand.name}}</option>
-         </select>
-       </div>
-
-       <div class="form-group">
-         <label>Loại Sản Phẩm</label>
-        <select [(ngModel)]="ptypeid" class="form-control" formControlName="ptype" required>
-          <option value="">---Please select---</option>
-          <option *ngFor="let ptype of ptypes" [value]="ptype._id">{{ptype.name}}</option>
-        </select>
-      </div>
+            <label>tong</label>
+            <input class="form-control" type="text" formControlName="total" required>
+          </div>
+          <div class="form-group">
+            <label>userID</label>
+            <input class="form-control" type="text" formControlName="user_ID" required>
+          </div>
         <div class="form-group buttonsave">
-          <button class="btn btn-primary btn-block" type="submit">Add Product</button>
+          <button class="btn btn-primary btn-block" type="submit">Add</button>
         </div>
             </div>
       </div>

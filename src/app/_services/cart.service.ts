@@ -29,12 +29,11 @@ export class CartService {
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
-  addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList)
-  }
+  
+  //addcart() {
+   // return this.httpClient.post('http://localhost:8002/api/add-cart', '....');
+  //}
+  
   getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{

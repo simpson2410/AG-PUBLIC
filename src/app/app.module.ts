@@ -42,6 +42,12 @@ import { EditUserComponent } from './_components/Manager-User/edit-user/edit-use
 import { ListUserComponent } from './_components/Manager-User/list-user/list-user.component';
 import { ProductDetailComponent } from './Components/Products/product-detail/product-detail.component';
 import { CartComponent } from './Components/Pages/cart/cart.component';
+import { ChatboxComponent } from './Components/Pages/chatbox/chatbox.component';
+import { FacebookModule } from 'ngx-facebook';
+import { AddCartComponent } from './Components/Functions/Add/add-cart/add-cart.component';
+import { CountdownModule } from 'ngx-countdown';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -76,11 +82,14 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
     ListUserComponent,
     ProductDetailComponent,
     CartComponent,
+    ChatboxComponent,
+    AddCartComponent,
 
 
   ],
   imports: [
     BrowserModule,
+    CountdownModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -88,6 +97,9 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
     BrowserAnimationsModule,
     NgSelectModule,
     FormsModule,
+    FacebookModule.forRoot(),
+    ToastrModule.forRoot(), 
+    
   ],
   providers: [ AuthInterceptorProviders ],
   bootstrap: [AppComponent]

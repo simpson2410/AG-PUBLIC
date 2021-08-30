@@ -5,7 +5,6 @@
   <app-login></app-login>
 </div>
 <div *ngIf="isLoggedIn">
-  <div *ngIf="showForm">
 <h1 style="text-align: center;font-weight: bolder;color: coral;">CẬP NHẬT THÔNG TIN SẢN PHẨM</h1>
 <div class="container">
       <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
@@ -41,6 +40,7 @@
      <div class="form-group">
            <label>Thương Hiệu</label>
           <select [(ngModel)]="brandid" class="form-control" formControlName="brand" required>
+            <option value="">---Please select---</option>
             <option *ngFor="let brand of brands" [value]="brand._id">{{brand.name}}</option>
           </select>
         </div>
@@ -48,6 +48,7 @@
         <div class="form-group">
           <label>Loại Sản Phẩm</label>
          <select [(ngModel)]="ptypeid" class="form-control" formControlName="ptype" required>
+          <option value="">---Please select---</option>
            <option *ngFor="let ptype of ptypes" [value]="ptype._id">{{ptype.name}}</option>
          </select>
        </div>
@@ -59,6 +60,4 @@
       </form>
     </div>
 </div>
-</div>
-
   

@@ -76,7 +76,7 @@ const productRoute = require('./app/routes/product.routes')
 const brandRoute = require('./app/routes/brand.routes');
 const ptypeRoute = require('./app/routes/ptype.routes');
 const contactRoute = require('./app/routes/contact.routes');
-const studentRoute = require('./app/routes/student.routes');
+const cartRoute = require('./app/routes/cart.routes');
 
 
 app.use(bodyParser.json());
@@ -86,6 +86,9 @@ app.use(bodyParser.urlencoded({
 
 // API root
 app.use('/api/product', productRoute)
+//
+// API root
+app.use('/api/cart', cartRoute)
 //
 // API root
 app.use('/api/brand', brandRoute)

@@ -39,27 +39,34 @@
         </a>
     </div>
 </div>
+
 <div class="container">
     <!--HOT NEWS-->
     <div class="hotnews">
         <h2 class="block-title">
-            Bài Viết Nổi Bật
+            Sản Phẩm Nổi Bật
         </h2>
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-         <div class="col-md-4"  *ngFor="let product of products " style="display: inline-block;">
-          <div class="card baseBlock " >
-         <img class="card-img-top"  style="height: 300px; width: 100%; display: block;" src="{{product.urlImage}}" data-holder-rendered="true">
-         <div class="card-body">
-           <h4 class="card-title">{{product.name}}</h4>
-           <p class="card-text">{{product.price}}</p>
-           <a class="btn btn-primary" (click)=addtocart(item)>Add to Cart</a>
-         </div>
-       </div>
-         </div>
+            <div class="col-md-4" *ngFor="let product of products " style="display: inline-block;">
+                <div class="card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-row align-items-center time"> <i class="fa fa-clock-o"></i> <small class="ml-1"><countdown [config]="config"></countdown></small> </div> <img src="https://i.imgur.com/suuFVrQ.png" width="20">
+                    </div>
+                    <div class="text-center center"> <img src="{{product.urlImage}}" width="250"> </div>
+                    <div class="text-center">
+                        <h3><strong>{{product.name}}</strong></h3> <span class="text-success">$ {{product.price}}</span><br><br>
+                        <a    class="a-detail btn btn-outline-secondary">VIEW DETAIL</a> <a (click)="addItemToCart(product._id ,product.price,1 )"class="a-cart btn btn-danger">ADD TO CART</a>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <br>
+            </div>
         </div>
-       </div>
-      <!-- /.container -->                                   
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>                                
 </div>
 <app-footer></app-footer>

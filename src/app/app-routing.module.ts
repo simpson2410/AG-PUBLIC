@@ -35,9 +35,13 @@ import { AddUserComponent } from './_components/Manager-User/add-user/add-user.c
 import { EditUserComponent } from './_components/Manager-User/edit-user/edit-user.component';
 import { ListUserComponent } from './_components/Manager-User/list-user/list-user.component';
 import { CartComponent } from './Components/Pages/cart/cart.component';
+import { ChatboxComponent } from './Components/Pages/chatbox/chatbox.component';
+import { AddCartComponent } from './Components/Functions/Add/add-cart/add-cart.component';
 
 
 const routes: Routes = [
+  { path: 'cartadd', component: AddCartComponent},
+
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
@@ -66,6 +70,7 @@ const routes: Routes = [
   { path: 'edit-user/:id', component: EditUserComponent },
   { path: 'users-list', component: ListUserComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'chatbox', component: ChatboxComponent },
 
 ];
 

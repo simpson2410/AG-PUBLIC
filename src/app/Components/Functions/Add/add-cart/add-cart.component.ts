@@ -6,17 +6,17 @@ import {FormControl} from '@angular/forms';
 import { Validators} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { brand } from 'src/app/_services/brand';
-import { BrandService } from 'src/app/_services/brand.service';
-import { PtypeService } from 'src/app/_services/ptype.service';
-import { ptype } from 'src/app/_services/ptype';
+import { Cart1Service } from 'src/app/_services/cart1.service';
+import { cart } from 'src/app/_services/cart';
 import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  selector: 'app-add-cart',
+  templateUrl: './add-cart.component.html',
+  styleUrls: ['./add-cart.component.css']
 })
-export class AddProductComponent implements OnInit {
+export class AddCartComponent implements OnInit {
   getId: any;
   brandid: number;
   ptypeid: number;
@@ -34,8 +34,7 @@ export class AddProductComponent implements OnInit {
     private ngZone: NgZone,
     private crudService: CrudService,
     public fb: FormBuilder,
-    private brandService: BrandService,
-    private ptypeService: PtypeService,
+    private cartService: Cart1Service,
     private authService: AuthService, 
     private tokenStorageService: TokenStorageService
   ) { 
@@ -44,10 +43,9 @@ export class AddProductComponent implements OnInit {
       name: [''],
       price: [''],
       urlImage: [''],
-      description: [''],
       quantity: [''],
-      brand: [''],
-      ptype: [''],
+      total: [''],
+      user_ID: [''],
     })
   }
   
@@ -65,20 +63,12 @@ export class AddProductComponent implements OnInit {
 
       this.username = user.username;
     }
-    this.brandService.Getbrands().subscribe(res => {
-      console.log(res)
-      this.brands =res;
-    });   
-    this.ptypeService.Getptypes().subscribe(res => {
-      console.log(res)
-      this.ptypes =res;
-    });    
   }
   onSubmit(): any {
-    this.crudService.Addproduct(this.bookForm.value)
+    this.cartService.Addcart(this.bookForm.value)
     .subscribe(() => {
         console.log('Data added successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('/products-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/carts-list'))
       }, (err) => {
         console.log(err);
     });

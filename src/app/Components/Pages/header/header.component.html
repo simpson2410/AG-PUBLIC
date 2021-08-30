@@ -9,7 +9,7 @@
                         </a>
                 </div>
             </div>
-            <div class="col-sm-9 navmenu">
+            <div class="col-sm-10 navmenu">
                 <nav class="navbar navbar-expand-sm navbar-white shift">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
@@ -18,26 +18,17 @@
                       <li class="nav-item dropdown" >
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
                         <div class="dropdown-menu">
-                          <!--<ng-container *ngFor="let ptype of ptypes; let i = index">--> 
-                          <ng-container>
+                          <ng-container *ngFor="let ptype of ptypes; let i = index">
                             <li class="nav-item wnav">
-                               <!--   <a class="nav-link"   [routerLink]="['/device/',ptype._id]">{{ptype.name}}</a>--> 
-                               <a class="nav-link"   [routerLink]="['/device/101']">Quản lý chiếu sáng</a>
-                               <a class="nav-link"   [routerLink]="['/device/102']">Bộ điều khiển</a>
-                               <a class="nav-link"   [routerLink]="['/device/103']">Quản lý nhiệt độ</a>
-                               <a class="nav-link"   [routerLink]="['/device/104']">Cảm biến</a>
-                               <a class="nav-link"   [routerLink]="['/device/105']">Công tắc cuộn cửa</a>
-                               <a class="nav-link"   [routerLink]="['/device/106']">Rèm & Động cơ</a>
-                               <a class="nav-link"   [routerLink]="['/device/107']">Khoá cửa thông minh</a>
-                               <a class="nav-link"   [routerLink]="['/device/108']">Công tắc & Ổ cắm</a>
+                                 <a class="nav-link"   [routerLink]="['/device/',ptype._id]">{{ptype.name}}</a>
                             </li>
                           </ng-container>
                         </div>
                       <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/phome']">SmartHome</a> 
+                        <a class="nav-link" [routerLink]="['/pcity']">SmartCity</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/pcity']">SmartCity</a>
+                        <a class="nav-link" [routerLink]="['/cart']">Giỏ Hàng</a> 
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/news']">Tin tức</a>
